@@ -1,11 +1,13 @@
 package org.scribe.oauth;
 
+import java.lang.reflect.Method;
 import java.util.*;
 
 import org.scribe.builder.api.*;
 import org.scribe.model.*;
 import org.scribe.services.*;
 import org.scribe.utils.*;
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -174,6 +176,9 @@ public class OAuth10aServiceImpl implements OAuthService
         }
         break;
     }
+    //add discogs user-agent if set in system.properties
+    if (System.getProperties().containsKey("DiscoGS-User-Agent"))
+    	request.addHeader("User-Agent", System.getProperty("DiscoGS-User-Agent"));
   }
 
   private static class TimeoutTuner extends RequestTuner
