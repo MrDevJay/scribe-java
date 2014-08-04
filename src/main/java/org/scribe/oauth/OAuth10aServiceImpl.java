@@ -1,13 +1,11 @@
 package org.scribe.oauth;
 
-import java.lang.reflect.Method;
 import java.util.*;
 
 import org.scribe.builder.api.*;
 import org.scribe.model.*;
 import org.scribe.services.*;
 import org.scribe.utils.*;
-
 import java.util.concurrent.TimeUnit;
 
 /**
